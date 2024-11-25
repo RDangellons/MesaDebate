@@ -1,0 +1,162 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF9F6; /* Fondo beige suave */
+    color: #333333; /* Texto gris oscuro */
+}
+
+header {
+    background-color: #2C3E50; /* Azul oscuro */
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+}
+
+nav ul {
+    list-style: none;
+    background-color: #34495E; /* Azul grisáceo */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #E74C3C; /* Rojo coral */
+    color: white;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: #FFFFFF; /* Fondo blanco puro */
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #2C3E50; /* Azul oscuro */
+    margin-top: 0;
+}
+
+.argumentos {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.argumento {
+    flex: 1;
+    background-color: #FDF2E9; /* Fondo naranja claro */
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #2C3E50; /* Azul oscuro */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Contenedor para centrar la imagen */
+.image-container {
+    position: relative;
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+}
+
+/* Imagen base */
+.zoomable {
+    width: 150%; /* Tamaño ajustado al contenedor */
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Estado ampliado */
+.zoomable.zoomed {
+    transform: scale(2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    position: relative;
+}
+
+
+.zoomable.zoomed::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+
+
+/* Botones */
+button {
+    background-color: #F39C12; /* Naranja vibrante */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #E67E22; /* Naranja más oscuro */
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        text-align: center;
+    }
+
+    .argumentos {
+        flex-direction: column;
+    }
+}
